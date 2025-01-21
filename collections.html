@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manukato Brands - Collections</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+        
+
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/manukato\ logo\ billboard.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: blur(2px);
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+            transition: background-color 0.2s;
+            opacity: 0.3;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav img {
+            max-height: 50px;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px; /* Add padding to the main content */
+            display: flex;
+            flex-wrap: wrap; /* Allow products to wrap */
+            justify-content: center; /* Center products horizontally */
+            gap: 20px; /* Space between products */
+            position: relative;
+            z-index: 1;
+            color:white;
+        }
+
+        .product {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            width: 300px; /* Adjust as needed */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+          }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .select-purchase   {
+            margin-top: 10px;
+        }
+
+        select {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .purchase-link {
+            display: inline-block;
+            padding: 12px 24px; /* Adjust padding for button size */
+            background-color: #4CAF50; /* Example green color */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for scaling */
+            border: none; /* Remove default link underline */
+            cursor: pointer; /* Indicate it's clickable */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+        }
+
+        .purchase-link:hover {
+            background-color: #45a049; /* Darker green on hover */
+            transform: scale(1.05); /* Slightly scale up on hover */
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        .product select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: center; /* Center the logos horizontally */
+            margin-top: 5px;
+            margin-bottom: 1px; /* Add some space above the logos */
+        }
+
+        .payment-options img {
+            max-height: 60px; /* Adjust logo size as needed */
+            margin: 0 5px; /* Add spacing between logos */
+        }
+
+    
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            transition: background-color 0.3s;
+            opacity: 0.5;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #555;
+        }
+    </style>
+
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="images/manukatologo.png" alt="Manukato Logo"></a>
+        <div>
+            <a href="collections.html">Collections</a>
+            <a href="aboutus.html">About Us</a>
+        </div>
+    </nav>
+    <div id="background"></div>
+    <div id="overlay"></div>
+    <main>
+        <div class="product">
+            <img src="images/Terre d'Hermes.jpg" alt="Perfume 1">
+            <h3>Terre dHermès</h3>
+            <p>Experience the earthy elegance of Terre d'Hermès. This iconic fragrance evokes a sense of groundedness and strength with its blend of wood, citrus, and spicy notes. Perfect for the modern man who appreciates a sophisticated and timeless scent.</p>
+            <div class="select-purchase">
+            <select id="Terre dHermès">
+                <option value="15ml by smart collection">15ml by smart collection - ksh.200</option>
+                <option value="100ml eau de toillete"> eau de toillete 100ml - ksh.3,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Terre dHermès')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>
+        </div>
+
+
+        </div>
+        <div class="product">
+            <img src="images/asad.jpg" alt="Perfume 2">
+            <h3>Asad by lataffa</h3>
+            <p>Asad by Lattafa Perfumes is a Oriental fragrance for men. Asad was launched in 2021. Top notes are Black Pepper, Tobacco and Pineapple; middle notes are Patchouli, Coffee and Iris; base notes are Vanilla, Amber, Dry Wood, Benzoin and Labdanum.</p>
+            <div class="select-purchase">
+            <select id="Asad by lataffa">
+                <option value="100ml">100ml - ksh. 2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Asad by lataffa')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/BROWN ORCHID MB.png" alt="Perfume 3">
+            <h3>Brown orchid</h3>
+            <p>Brown Orchid is long lasting and with wide spread aura. It is an oriental chypre. Top notes are French jasmine, black truffle, ylang-ylang, black currant and effervescent citrus.</p>
+            <div class="select-purchase">
+            <select id="Brown Orchid">
+                <option value="50ml">50ml Rose selected - ksh. 300</option>
+                <option value="50ml">50ml fragrance World - ksh. 500</option>
+                <option value="100ml">100ml - ksh. 2,100</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Brown Orchid')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/blueformen.jpg" alt="Perfume 4">
+            <h3>Blue For Men by Rasasi</h3>
+            <p>Blue For Men by Rasasi is a Aromatic Spicy fragrance for men. Top notes are Mint and Mandarin Orange; middle notes are Pepper, Jasmine, Rose, Coriander and Geranium; base notes are Woodsy Notes and Amber.</p>
+            <div class="select-purchase">
+            <select id="Blue For Men">
+                <option value="100ml by rasase">100ml copy by rasase - ksh. 500</option>
+                <option value="100ml">100ml by rasasi  - ksh. 2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Blue For Men')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/chiffonrouge.png" alt="Perfume 5">
+            <h3>Chifon rouge by Emper</h3>
+            <p> Chifon Rouge is made to celebrate your uniqueness and outgoingness. With its captivating design and magical scent, beauty has never looked this good. Top notes: Grapefruit, Bergamot, Lemon Middle Notes: Rose, Orange Blossom, Jasmine Base notes: Leather, Praline, Patchouli, Sandalwood, Musk</p>
+            <div class="select-purchase">
+            <select id="Chifon rouge">
+                <option value="200ml body spray">200ml body spray - ksh. 450</option>
+                <option value="100ml">100ml - ksh. 2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Chifon rouge')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>
+            </div>
+
+        </div>
+        <div class="product">
+            <img src="images/9PM MB.png" alt="Perfume 6">
+            <h3>9 PM by Afnan</h3>
+            <p>A provocative fragrance that exudes confidence, sensuality, and sophistication,  Crisp top notes of bergamot, lavandin, cinnamon, and apple create an invigorating introduction. Middle notes of muguet and orange blossom add depth and elegance to the composition. A blend of patchouli, amber, vanilla, and tonka bean provides a refined and lasting finish. </p>
+            <div class="select-purchase">
+            <select id="9 pm">
+                <option value="100ml">100ml - ksh.5,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('9 pm')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+
+        </div>
+        <div class="product">
+            <img src="images/Goldenoud.jpg" alt="Perfume 7">
+            <h3>Golden Oud by Asdaf</h3>
+            <p>Golden Oud, where the richness of cinnamon, the elegance of tonka bean and the spirit of sandalwood meet the allure of clear and luxurious gold. </p>
+            <div class="select-purchase">
+            <select id="Golden Oud">
+                <option value="100ml">100ml - ksh.4,200</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Golden Oud')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/barakkat.jpg" alt="Perfume 8">
+            <h3>Barakkat Rouge 540</h3>
+            <p>Its head note is a sweet yet subtle blend of Grandiflorum jasmine from Egypt, then enhanced with the epicurean facets of bitter almond from Morocco. Lastly, the mineral note, built around ambergris, is tamed with a musky and woody accord, creating an intoxicating fragrance that lingers on your skin.</p>
+            <div class="select-purchase">
+            <select id="Barakkat Rouge 540">
+                <option value="15ml by smart collection">15ml by smart collection - ksh.200</option>
+                <option value="100ml by smart collection">100ml by smart collection - ksh.1,500</option>
+                <option value="100ml by fragrance world">100ml by fragrance world- ksh.4,200</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Barakkat Rouge 540')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+
+        </div> <div class="product">
+            <img src="images/emotion.jpg" alt="Perfume 9">
+            <h3>Emotion by Rasasi</h3>
+            <p>This perfume is dedicated to the emotions of tenderness, protectiveness, vulnerability and romance. It opens with the fresh notes of bergamot and orange blossom. Lavender, violet, cinnamon and rose are at the heart, while the base features patchouli, tonka, sandalwood, amber and musk. </p>
+            <div class="select-purchase">
+            <select id="Emotion by Rasasi">
+                <option value="200ml body spray">200ml body spray - ksh.450</option>
+                <option value="100ml">100ml - ksh.2,300</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Emotion by Rasasi')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+        
+        <div class="product">
+            <img src="images/innocencewomen.jpg" alt="Perfume 10">
+            <h3>Innocence by Rasasi</h3>
+            <p>Innocence, a gentle and tender fragrance, opens with floral notes of gardenia and citrus notes like bergamot. Rose, carnation and jasmine are at the heart, while the base features peach, apricot, vanilla and sandalwood. </p>
+            <select id="Innocence by Rasasi">
+                <option value="50ml Innocence by Rose selected">Innocence by rose Selected 50ml - ksh.300</option>
+                <option value="65ml Innocence by Rasase">Innocence by Rasase 65ml. - ksh.500</option>
+                <option value="65ml Innocence by Rasasi"> innocence by Rasasi 100ml - ksh.1,800</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Innocence by Rasasi')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/bluelady.jpg" alt="Perfume 11">
+            <h3>Blue Lady by Rasasi</h3>
+            <p>Terre dHermès is a metaphor for materials, a matrix that speaks of territory as well as matter, earth, and roots.This vertically structured scent is based on an alchemy of wood, the scent first introduces the gaity of orange, the bitterness of grapefruit and the vivacity of pepper and of fresh spices.</p>
+            <div class="select-purchase">
+            <select id="Blue Lady">
+                <option value="65ml by Rose Selected">100ml by Rose Selected - ksh.500</option>
+                <option value="40ml by Rasasi">40ml by Rasasi - ksh.1,800</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Blue Lady')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/legendmontdesigner.jpg" alt="Perfume 12">
+            <h3>Legend Mont Blanc(designer)</h3>
+            <p>Legend is dedicated to inspiring, virtuous and self-confident men who are courageous, passionate and authentic. Their fragrance is subtle but striking and masculine.</p>
+            <div class="select-purchase">
+            <select id="Legend Mont Blanc">
+                <option value="10ml designer refill">10ml designer refill - ksh.500</option>
+                <option value="50ml designer refill">50ml designer refill - ksh.1,800</option>
+                <option value="100ml eau de toilette"> eau de toillete 100ml - ksh.3,000</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Legend Mont Blanc')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+
+        </div>
+        <div class="product">
+            <img src="images/bleudechanel.jpg" alt="Perfume 13">
+            <h3>Bleu de Chanel eau de toillete</h3>
+            <p>Bleu de Chanel by Chanel is a woody aromatic fragrance for men presented on the market in 2010. The nose behind this fragrance is Jacques Polge. The fragrance features labdanum, nutmeg, ginger, sandalwood, patchouli, mint, jasmine, grapefruit, citruses, vetiver, incense, cedar and pink pepper.</p>
+            <div class="select-purchase">
+            <select id="Bleu de Chanel">
+                <option value="15ml by smart collection">15ml by smart collection - ksh.200</option>
+                <option value="100ml by smart collection">100ml by smart collection - ksh.1,500</option>
+                <option value="100ml eau de toillete">100ml eau de toilette - ksh.3,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Bleu de Chanel')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+        
+        <div class="product">
+            <img src="images/Khamra Qahwa Perfume Lattafa Perfumes Khamra Perfume Eau De Parfum Sealed 100ML eBay.jpg" alt="Perfume 14">
+            <h3>Khamra by lataffa</h3>
+            <p>is a luxurious oriental-spicy unisex perfume that combines precious spices, the warmth of woody notes and the softness of vanilla. The fragrance is released by the Arab luxury perfume brand Lattafa Perfumes and comes in a luxurious crystal bottle..</p>
+            <div class="select-purchase">
+            <select id="Khamra">
+                <option value="200ml body spray">200ml body spray- ksh.450</option>
+                <option value="300ml air freshner">300ml air freshner - ksh.500</option>
+                <option value="100ml by lataffa">100ml by lataffa - ksh.4,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Khamra')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/Belissimo.jpg" alt="Perfume 15">
+            <h3>Belissimo by Aris</h3>
+            <p>A delicate fragrance Aris Belissimo for women with ruby orange, mango and baked apple as top notes. While raspberry and rose as middle notes and bottom notes are of white musk, sandalwood and coconut.</p>
+            <div class="select-purchase">
+            <select id="Belissimo by Aris">
+                <option value="100ml by Aris">100ml by Aris - ksh.1,800</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Belissimo by Aris')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/blue for men incontourble.jpg" alt="Perfume 16">
+            <h3>Blue for Men incontourble</h3>
+            <p>L'Incontournable Blue 2 for Men by Rasasi is a Woody Aromatic fragrance for men. Top notes are Citruses, Bergamot and Wormwood; middle notes are Spicy Notes, Cardamom and Geranium; base notes are Woody Notes, Sandalwood and Musk. </p>
+            <div class="select-purchase">
+            <select id="Blue for Men incontourble">
+                <option value="200ml body spray by rasai">200ml body spray by rasasi - ksh.450</option>
+                <option value="75ml by rasai">75ml by rasasi - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Blue for Men incontourble')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/Brown orchid Gold Edition.jpg" alt="Perfume 17">
+            <h3>Brown Orchid Gold Edition</h3>
+            <p>As the scent develops, the heart reveals a rich and complex combination of blackcurrant, truffle, spices, fruity notes, lotus, orchids, and sandalwood. This harmonious blend introduces depth and sophistication, intertwining sweet and savory elements with lush floral undertones.</p>
+            <div class="select-purchase">
+            <select id="Brown Orchid Gold Edition">
+                <option value="100ml by fragrance world">100ml by fragrance world - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Brown Orchid Gold Edition')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/chastity.jpg" alt="Perfume 18">
+            <h3>Chastity Men</h3>
+            <p>Chastity Men fragrance makes a man stand out from the crowd, irresistibly attractive. Invigorating opening features Brazilian tangerine and Haiti lime. The heart is spicy with pepper from Madagascar, while the base consists of Indonesian patchouli and musk. </p>
+            <div class="select-purchase">
+            <select id="Chastity Men">
+                <option value="200ml body spray">200ml body spray- ksh.450</option>
+                <option value="100ml by Rasasi">100ml by Rasasi - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Chastity Men')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/weekendberries.jpg" alt="Perfume 20">
+            <h3>Weekend Berries</h3>
+            <p>A sheer fragrance with top notes of tangerine, tree sap and reseda plant. Delicate floral heart notes of wild rose, peach blossom, iris and hyacinth, invigorated by a subtle splash of nectarine.</p>
+            <div class="select-purchase">
+            <select id="Weekend Berries">
+                <option value="100ml by fragrance world">100ml by fragrance world - ksh.2,800</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Weekend Berries')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/Technique Gold.jpg" alt="Perfume 21">
+            <h3>Technique Gold</h3>
+            <p>Technique Gold by Aris Cosmetics exudes elegance and refinement, making it the ideal choice for those seeking to make a statement. With its enduring scent, it's perfect for any occasion, providing a touch of golden allure that lingers in the memory.</p>
+            <div class="select-purchase">
+            <select id="Technique Gold">
+                <option value="100ml by Aris">100ml by Aris - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Technique Gold')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/suave elixir.jpg" alt="Perfume 22">
+            <h3>Suave Elixir</h3>
+            <p>The Suave Eau De Parfum is a fresh, citrusy scent with warmth and sweetness. The Suave Elixir Fragrance World opens with Mandarin and Bergamot top notes. The feeling you get on the first spray is very refreshing and filled with citrusy goodness. It's a clean and uplifting start that will leave you feeling energized.</p>
+            <div class="select-purchase">
+            <select id="Suave Elixir">
+                <option value="80ml by fragrance world">100ml by fragrance world - ksh.2,700</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Suave Elixir')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/shalis.jpg" alt="Perfume 23">
+            <h3>shalis by remy marquis</h3>
+            <p>Shalis Cologne by Remy Marquis is a Aromatic Fougere fragrance for men. Top notes are Grapefruit, Apple and Mandarin Orange; middle notes are Basil and Lavender; base notes are Sandalwood, Nutmeg and Oakmoss</p>
+            <div class="select-purchase">
+            <select id="Shalis Men">
+                <option value="100ml by remy marquis">100ml by remy marquis-ksh.3,200</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Shalis Men')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/seduction.jpg" alt="Perfume 24">
+            <h3>Seduction Women</h3>
+            <p>A blend of warmth and sensual concept that conjure up association with the legendary fragrances of the orient. It is complemented by floral and fruity essence. The run down is of sweet powdery aspect. It is an expression of love, passion, sensuality and self assuarance of today's woman.</p>
+            <div class="select-purchase">
+            <select id="Seduction Women">
+                <option value="200ml body spray">200ml body spray- ksh.450</option>
+                <option value="75ml by rasase">75ml by rasase - ksh.500</option>
+                <option value="75ml by rasasi">75ml by rasasi - ksh.1,900</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Seduction Women')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/royaleblack.jpg" alt="Perfume 25">
+            <h3>Royale Black</h3>
+            <p>Royale by Rasasi is a Woody Aromatic fragrance for men. Top notes are Lavender and Geranium; middle notes are Cedar and Cinnamon; base notes are Patchouli, Moss, Musk and Amber. </p>
+            <div class="select-purchase">
+            <select id="Royal Black">
+                <option value="200ml body spray">200ml body spray- ksh.450</option>
+                <option value="75ml by rasase">75ml by rasase - ksh.500</option>
+                <option value="100ml by rasasi">100ml by rasasi - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Royal Black')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/royale blue.jpg" alt="Perfume 26">
+            <h3>Royale Blue</h3>
+            <p>Royale Blue by Rasasi is a Woody Floral Musk fragrance for men. Top notes are Sea Notes, Bergamot, Melon and Galbanum; middle notes are Lavender, Violet, Jasmine and Rose; base notes are Musk, Sandalwood, Cedar, Amber and Patchouli. </p>
+            <div class="select-purchase">
+            <select id="Royale Blue">
+                <option value="200ml body spray">200ml body spray- ksh.450</option>
+                <option value="75ml by rasase">75ml by rasase - ksh.500</option>
+                <option value="100ml by rasasi">100ml by rasasi - ksh.2,200</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Royale Blue')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/ROSE SEDUCTION SECRET ESSENSE MB.png" alt="Perfume 27">
+            <h3>Rose Seduction Essence</h3>
+            <p>Rose Seduction, a sophisticated and irresistible fragrance that captivates with top notes of orange blossom, apple and tangerine. As the heart is revealed, sweet notes and jasmine vibrate along with the elegant and comfortable background of vanilla and musk.</p>
+            <div class="select-purchase">
+            <select id="Rose Seduction Essence">
+                <option value="100ml by fragrance world">100ml by fragrance world - ksh.2,100</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Rose seduction Essence')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/romance.jpg" alt="Perfume 28">
+            <h3>Romance Men</h3>
+            <p>Romance Forever by Rasasi is a Oriental Floral fragrance for men. Romance Forever was launched in 2018. Top notes are Petitgrain, Clary Sage, Artemisia, Bergamot, Lavender, Geranium, Cypress, Lemon and Basil; middle notes are Jasmine, Nutmeg, Rose, Iris, Mate and Labdanum; base notes are Sandalwood, Amber and Musk. </p>
+            <div class="select-purchase">
+            <select id="Romance Men">
+                <option value="200ml body spray">200ml body spray- ksh.450</option>
+                <option value="100ml by rasasi">100ml by rasasi - ksh.2,300</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Romance Men')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/ophylia.jpg" alt="Perfume 29">
+            <h3>Ophylia Legend</h3>
+            <p>Ophylia Legend is an elegant but at the same time seductive fragrance for women. The aroma opens up to the smell of ripe apricots intertwined with sweet plums. The aromatic notes of the salt give a gentle mixture to this combination.</p>
+            <div class="select-purchase">
+            <select id="Ophylia Legend">
+                <option value="50ml by fragrance world">50ml by fragrance world - ksh.500</option>
+                <option value="80ml by fragrance world">80ml by fragrance world - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Ophylia Legend')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/polodesigner.jpg" alt="Perfume 30">
+            <h3>Polo Supreme Oud</h3>
+            <p>Polo Supreme Oud by Ralph Lauren is a Oriental Woody fragrance for men. Polo Supreme Oud was launched in 2015. The nose behind this fragrance is Carlos Benaïm. Top notes are Cinnamon and Pink Pepper; middle note is Agarwood (Oud); base notes are Guaiac Wood and Vetiver. </p>
+            <div class="select-purchase">
+            <select id="Polo Supreme Oud">
+                <option value="125ml designer">125ml designer - ksh.3,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Polo Supreme Oud')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/my soulmate cream.jpg" alt="Perfume 31">
+            <h3>My soulmate</h3>
+            <p> a refreshing citrus cocktail with a delicate sweet pea blossom. Then comes sweet notes of passion fruit, quince and peach with refined floral notes from gardenia, freesia and geranium petals.</p>
+            <div class="select-purchase">
+            <select id="My Soulmate">
+                <option value="100ml by fragrance world">100ml by fragrance world - ksh.2,200</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('My Soulmate')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/my soulmate black.jpg" alt="Perfume 32">
+            <h3>My Soulmate Black</h3>
+            <p>My Soulmate fragrance for women. Modern classifiers classify this perfume composition as oriental - oriental and floral. The aroma opens with wonderful notes of jasmine flowers. The heart of the scent is created by a duo of sensual roses and cold peaches. The aroma is based on an intense deep duo of patchouli and amber. The enchanting and mysterious aroma will take you to a flower garden surrounded by storms. </p>
+            <div class="select-purchase">
+            <select id="My Soulmate Black">
+                <option value="100ml by fragrance world">100ml by fragrance world - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('My Soulmate Black')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/IMG_20250115_104538_265.jpg" alt="Perfume 33">
+            <h3>Presidente Men</h3>
+            <p>Presidente by Emper is a Oriental Fougere fragrance for men. Top notes are Black Pepper, Bergamot and Lemon; middle notes are Lavender, Nutmeg and Mint; base notes are Benzoin, Vetiver, Musk and Cedar. </p>
+            <div class="select-purchase">
+            <select id="Presidente Men">
+                <option value="100ml by Emper">100ml by Emper - ksh.2,000</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('My Soulmate Black')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/IMG_20250115_104404_498.jpg" alt="Perfume 34">
+            <h3>Ecstasy by fragrance world</h3>
+            <p>It is the fragrance for a young lady looking for eternal love, loving surprises and unexpected course of events. It is sensual, live, vibrant fragrance of fruity, flowery and chocolate scents. First, the scent of lychee, quince, and kiwi smelling of youth and playfulness can be smelt.</p>
+            <div class="select-purchase">
+            <select id="Ecstacy Woman">
+                <option value="15ml by smart collection">15ml by smart collection - ksh.200</option>
+                <option value="100ml by fragrance world">100ml by fragrance world - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Ecstacy Woman')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/IMG_20250115_104430_677.jpg" alt="Perfume 35">
+            <h3>Emporia by Fragrance world</h3>
+            <p>Its a fragrance you will not be able to resist! The lush seductive fragrance of Emporia perfume for women is intertwined with contrasting scents. First you will be fascinated by the distinctive notes of pomegranate, which gradually intertwine with the notes of flowers. The scent also intertwines a subtle lotus and a dominant black orchid that creates the main accent of the scent. The base and heart notes blend perfectly with musk, amber and mahogany.</p>
+            <div class="select-purchase">
+            <select id="Emporia Women">
+                <option value="100ml by fragrance world">100ml by fragrance world - ksh.2,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Emporia Women')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/IMG_20250115_104450_537.jpg" alt="Perfume 36">
+            <h3>Davidoff Leather Blend(designer)</h3>
+            <p>Davidoff Leather Blend by Davidoff is a Leather fragrance for women and men. Davidoff Leather Blend was launched in 2014. The nose behind this fragrance is Christophe Raynaud. Top notes are Saffron and Pepper; middle notes are Amber and Rose; base notes are Leather and Papyrus. </p>
+            <div class="select-purchase">
+            <select id="Davidoff Leather Blend">
+                <option value="100ml designer">100ml designer - ksh.3,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Davidoff Leather Blend')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/IMG_20250115_104516_729.jpg" alt="Perfume 37">
+            <h3>Salvo Men</h3>
+            <p>Salvo by Maison Alhambra is a Oriental Fougere fragrance for men. Salvo was launched in 2022. Top note is Bergamot; middle notes are Lavender, Sichuan Pepper, Star Anise and Nutmeg; base notes are Ambroxan and Vanilla.</p>
+            <div class="select-purchase">
+            <select id="Salvo Men">
+                <option value="100ml by Maison Alhambra">100ml by Maison Alhambra - ksh.3,500</option>
+            </select>
+            <a href="#" class="purchase-link" onclick="openwhatsApp('Salvo Men')">Confirm Purchase via Whatsapp </a>
+            <div class="payment-options">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/mpesa.png" alt="M-Pesa">
+            </div>   
+            </div>
+        </div>
+
+
+    
+
+        </main>
+    <footer>
+        &copy; 2025 Manukato Brands[@mb]. All rights reserved.
+    </footer>
+    <script>
+function openwhatsApp(productName) {
+  const selectedSize = document.getElementById(productName).value;  // Get value from select element itself
+  const phoneNumber = "254700405228";
+  const message = encodeURIComponent(`Hello!Manukato Brands, I would like to purchase ${productName}, size ${selectedSize}.`);
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+  window.open(whatsappURL, '_blank');
+}
+    </script>
+</body>
+</html>
